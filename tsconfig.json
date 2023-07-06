@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "noEmitOnError": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": false,
+        "declaration": true,
+        "rootDir": "./src",
+        "outDir": "./dist"
+    },
+    "includes": [
+        "**/*.ts",
+        "**/*.tsx",
+    ]
+}

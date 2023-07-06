@@ -1,0 +1,10 @@
+src
+test
+typings
+bundled
+build
+coverage
+docs
+.gitignore
+.vscode
+type_definitions
