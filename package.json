@@ -38,5 +38,13 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yittoo/react-lifecycle-communicator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yittoo/react-lifecycle-communicator/issues"
+  },
+  "homepage": "https://github.com/yittoo/react-lifecycle-communicator#readme"
 }
