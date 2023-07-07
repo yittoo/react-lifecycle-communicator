@@ -2,6 +2,7 @@
   "name": "react-lifecycle-communicator",
   "version": "0.0.3",
   "description": "Helper library that allows communication inside to react lifecycle",
+  "type": "module",
   "keywords": [
     "react",
     "communicator",

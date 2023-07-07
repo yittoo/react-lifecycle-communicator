@@ -6,12 +6,14 @@
         "noEmitOnError": true,
         "removeComments": true,
         "sourceMap": true,
-        "module": "commonjs",
-        "target": "es6",
+        "module": "ESNext",
+        "target": "ES6",
         "noImplicitAny": false,
         "declaration": true,
         "rootDir": "./src",
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "moduleResolution": "node"
     },
     "includes": [
         "**/*.ts",
