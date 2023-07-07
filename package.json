@@ -16,7 +16,7 @@
     "build": "npx rimraf dist && npm run tsc",
     "lint": "eslint \"?(src|__tests__)/**/*.ts{,x}\"",
     "test": "npm run lint && jest",
-    "publish": "npm run lint && npm run build && npm publish",
+    "release": "npm run lint && npm run build && npm publish",
     "tsc": "tsc"
   },
   "peerDependencies": {
