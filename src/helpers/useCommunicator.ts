@@ -3,17 +3,12 @@ import { EventEmitter } from 'eventemitter3';
 import { Listener } from '../interfaces/Listener';
 
 
-export interface UseCommunicator {
-  (createParams: UseCommunicatorParams): void
-}
-
 export interface UseCommunicatorParams {
   eventName: string;
-  emitter: EventEmitter;
   listener: Listener;
 }
 
-export const useCommunicator: UseCommunicator = ({ emitter, eventName, listener }) => {
+export const useCommunicator = (emitter: EventEmitter, { eventName, listener }: UseCommunicatorParams): void => {
   useEffect(() => {
     emitter.on(eventName, listener);
 
