@@ -12,7 +12,7 @@ export const useCommunicator = (emitter: EventEmitter, { eventName, listener }: 
   useEffect(() => {
     emitter.on(eventName, listener);
 
-    () => {
+    return () => {
       emitter.removeListener(eventName, listener);
     };
   }, [emitter, eventName, listener]);
