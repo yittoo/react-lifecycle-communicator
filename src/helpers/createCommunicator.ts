@@ -30,7 +30,7 @@ export const createCommunicator = (defaultEventName = 'default'): Communicator =
    * @param eventName name to listen event on, it has to match the firing `dispatch`,
   defaults to event name passed to `createCommunicator`
    */
-  const useCommunicatorWithEmitter = (listener: Listener, eventName: string) => useCommunicator(
+  const useCommunicatorWithEmitter = (listener: Listener, eventName?: string) => useCommunicator(
     emitter,
     {
       eventName: eventName ?? defaultEventName,

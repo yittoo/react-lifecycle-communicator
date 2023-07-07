@@ -12,3 +12,4 @@ type_definitions
 jest.config.js
 jest.setup.js
 tsconfig.json
+scripts

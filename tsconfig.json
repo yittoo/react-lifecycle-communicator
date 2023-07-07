@@ -1,22 +1,23 @@
 {
-    "compilerOptions": {
-        "typeRoots": [
-            "./node_modules/@types"
-        ],
-        "noEmitOnError": true,
-        "removeComments": true,
-        "sourceMap": true,
-        "module": "ESNext",
-        "target": "ES6",
-        "noImplicitAny": false,
-        "declaration": true,
-        "rootDir": "./src",
-        "outDir": "./dist",
-        "esModuleInterop": true,
-        "moduleResolution": "node"
-    },
-    "includes": [
-        "**/*.ts",
-        "**/*.tsx",
-    ]
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "sourceMap": true,
+    "removeComments": true,
+    "declaration": false,
+    "noImplicitAny": false,
+  },
+  "includes": [
+    "**/*.ts",
+    "**/*.tsx",
+  ]
 }

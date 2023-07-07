@@ -2,7 +2,6 @@
   "name": "react-lifecycle-communicator",
   "version": "0.0.3",
   "description": "Helper library that allows communication inside to react lifecycle",
-  "type": "module",
   "keywords": [
     "react",
     "communicator",
@@ -10,14 +9,24 @@
     "lifecycle",
     "EventEmitter"
   ],
-  "main": "dist/index",
-  "types": "./dist/index.d.ts",
+  "main": "./build/cjs/index.js",
+  "module": "./build/esm/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    "./*": {
+      "types": "./build/types/index.d.ts",
+      "require": "./build/cjs/index.js",
+      "import": "./build/esm/index.js",
+      "default": "./build/esm/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "build": "npx rimraf dist && npm run tsc",
+    "build": "npx rimraf dist && npm run tsc && node ./scripts/prepare-package-json.js",
     "lint": "eslint \"?(src|__tests__)/**/*.ts{,x}\"",
     "test": "npm run lint && jest",
     "publish": "npm run lint && npm run build && npm publish",
-    "tsc": "tsc"
+    "tsc": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json"
   },
   "peerDependencies": {
     "react": ">=16.8"
