@@ -1,6 +1,6 @@
 {
   "name": "react-lifecycle-communicator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Helper library that allows communication inside to react lifecycle",
   "type": "module",
   "keywords": [
@@ -17,15 +17,14 @@
     "lint": "eslint \"?(src|__tests__)/**/*.ts{,x}\"",
     "test": "npm run lint && jest",
     "release": "npm run lint && npm run build && npm publish",
-    "tsc": "tsc"
-  },
-  "peerDependencies": {
-    "react": ">=16.8"
+    "tsc": "tsc",
+    "coverage": "npm run test -- --coverage"
   },
   "dependencies": {
     "eventemitter3": "^5.0.1"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.16.0",
     "@types/react": "18.2.13",
