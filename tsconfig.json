@@ -12,11 +12,15 @@
         "declaration": true,
         "rootDir": "./src",
         "outDir": "./dist",
+        "noFallthroughCasesInSwitch": true,
         "esModuleInterop": true,
         "moduleResolution": "node"
     },
     "includes": [
         "**/*.ts",
         "**/*.tsx",
+    ],
+    "exclude": [
+        "__tests__/**"
     ]
 }

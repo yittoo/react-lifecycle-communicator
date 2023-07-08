@@ -8,7 +8,10 @@ docs
 .gitignore
 .vscode
 type_definitions
-.eslintrc.js
-jest.config.js
-jest.setup.js
-tsconfig.json
+.eslintrc.cjs
+jest.config.cjs
+jest.setup.cjs
+tsconfig*.json
+.jest
+.github
+.env

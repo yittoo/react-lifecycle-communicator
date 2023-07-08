@@ -8,7 +8,7 @@ export interface UseCommunicatorParams {
   listener: Listener;
 }
 
-export const useCommunicator = (emitter: EventEmitter, { eventName, listener }: UseCommunicatorParams): void => {
+export const useCommunicatorBase = (emitter: EventEmitter, { eventName, listener }: UseCommunicatorParams): void => {
   useEffect(() => {
     emitter.on(eventName, listener);
 

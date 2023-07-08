@@ -8,3 +8,4 @@ npm-debug.log
 .idea/
 docs/
 .nyc_output/
+.jest

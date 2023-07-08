@@ -1,6 +1,6 @@
 import EventEmitter from 'eventemitter3';
 
-import { useCommunicator } from './useCommunicator';
+import { useCommunicatorBase } from './useCommunicatorBase';
 import { Communicator } from '../interfaces/Communicator';
 import { Dispatch } from '../interfaces/Dispatch';
 import { Listener } from '../interfaces/Listener';
@@ -30,7 +30,7 @@ export const createCommunicator = (defaultEventName = 'default'): Communicator =
    * @param eventName name to listen event on, it has to match the firing `dispatch`,
   defaults to event name passed to `createCommunicator`
    */
-  const useCommunicatorWithEmitter = (listener: Listener, eventName: string) => useCommunicator(
+  const useCommunicatorWithEmitter = (listener: Listener, eventName: string) => useCommunicatorBase(
     emitter,
     {
       eventName: eventName ?? defaultEventName,
@@ -40,6 +40,7 @@ export const createCommunicator = (defaultEventName = 'default'): Communicator =
 
   return {
     dispatch,
-    useCommunicator: useCommunicatorWithEmitter
+    useCommunicator: useCommunicatorWithEmitter,
+    __UNSAFE_emitter: emitter
   };
 };
