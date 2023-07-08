@@ -8,26 +8,19 @@ on:
     types: [created]
 
 jobs:
-  install-dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-
   test:
-    needs: install-dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm run coverage
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run coverage tests
+        run: npm run coverage
 
-  build:
+  build-npm:
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -35,17 +28,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm run build
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: npm run release
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build and release to NPM
+        run: npm run release
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
